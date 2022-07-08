@@ -133,7 +133,7 @@
     "filename": "Win_Start_Cleanup.ps1",
     "submittedBy": "https://github.com/Omnicef",
     "name": "Disk - Cleanup C: drive",
-    "description": "Cleans the C: drive's Window Temporary files, Windows SoftwareDistribution folder, the local users Temperary folder, IIS logs (if applicable) and empties the recycling bin. All deleted files will go into a log transcript in $env:TEMP. By default this script leaves files that are newer than 7 days old however this variable can be edited.",
+    "description": "Cleans the C: drive's Window Temporary files, Windows SoftwareDistribution folder, the local users Temporary folder, IIS logs (if applicable) and empties the recycling bin. All deleted files will go into a log transcript in $env:TEMP. By default this script leaves files that are newer than 7 days old however this variable can be edited.",
     "shell": "powershell",
     "category": "TRMM (Win):Maintenance",
     "supported_platforms": [
@@ -201,6 +201,30 @@
     "description": "Pulls last 50 lines, unless more are requested from TRMM agent and Mesh Agent",
     "syntax": "[-Lines <Int>]",
     "shell": "powershell",
+    "supported_platforms": [
+      "windows"
+    ],
+    "category": "TRMM (Win):TacticalRMM Related"
+  },
+  {
+    "guid": "e2a21b69-b446-429c-ab56-328d4e8696fb",
+    "filename": "Win_TRMM_Agent_Debugmode.bat",
+    "submittedBy": "https://github.com/silversword411",
+    "name": "TacticalRMM - Put TRMM Agent into Debug Mode",
+    "description": "Puts TRMM agent into debug mode temporarily. Restart PC to end debug session. Pull logs with Get Agent Logs script.",
+    "shell": "cmd",
+    "supported_platforms": [
+      "windows"
+    ],
+    "category": "TRMM (Win):TacticalRMM Related"
+  },
+  {
+    "guid": "910e4ac3-5c6d-47a2-ab99-0d8bb2ddf166",
+    "filename": "Win_TRMM_Agent_DebugmodeUndo.bat",
+    "submittedBy": "https://github.com/silversword411",
+    "name": "TacticalRMM - Undo TRMM Agent Debug Mode",
+    "description": "Reverts TRMM agent debug mode back to normal mode. Pull logs with Get Agent Logs script.",
+    "shell": "cmd",
     "supported_platforms": [
       "windows"
     ],
@@ -363,6 +387,18 @@
     "submittedBy": "https://github.com/silversword411",
     "name": "TeamViewer - Get ClientID for client",
     "description": "Returns Teamviewer ClientID for client - Use with Custom Fields for later use.",
+    "shell": "powershell",
+    "supported_platforms": [
+      "windows"
+    ],
+    "category": "TRMM (Win):Collectors"
+  },
+  {
+    "guid": "4f1f20e8-b3f6-495d-8436-c7368500b5f6",
+    "filename": "Win_Supremo_GetID.ps1",
+    "submittedBy": "https://github.com/silversword411",
+    "name": "Supremo - Get ClientID for client",
+    "description": "Returns Supremo ClientID for client - Use with Custom Fields for later use.",
     "shell": "powershell",
     "supported_platforms": [
       "windows"
@@ -563,11 +599,22 @@
     "guid": "da51111c-aff6-4d87-9d76-0608e1f67fe5",
     "filename": "Win_Defender_Enable.ps1",
     "submittedBy": "https://github.com/dinger1986",
-    "syntax": "[-NoControlledFolders]",
     "name": "Defender - Enable",
     "description": "Enables Windows Defender and sets preferences",
     "shell": "powershell",
     "syntax": "[-NoControlledFolders][-AuditOnly]",
+    "supported_platforms": [
+      "windows"
+    ],
+    "category": "TRMM (Win):Security>Antivirus"
+  },
+  {
+    "guid": "5d476062-7a0d-4531-b291-3df4a3353081",
+    "filename": "Win_Defender_Revert.ps1",
+    "submittedBy": "https://github.com/silversword411",
+    "name": "Defender - Revert back to Default Settings",
+    "description": "Restores Windows Defender settings back to default",
+    "shell": "powershell",
     "supported_platforms": [
       "windows"
     ],
@@ -1289,7 +1336,7 @@
     "supported_platforms": [
       "windows"
     ],
-    "default_timeout": "1"
+    "default_timeout": "90"
   },
   {
     "guid": "168037d8-78e6-4a6a-a9a9-8ec2c1dbe949",
@@ -1302,7 +1349,20 @@
     "supported_platforms": [
       "windows"
     ],
-    "default_timeout": "1"
+    "default_timeout": "600"
+  },
+  {
+    "guid": "8076124b-1be2-4d4d-a432-f41a260f1153",
+    "filename": "Win_RunAsUser_Example.ps1",
+    "submittedBy": "https://github.com/silversword411",
+    "name": "EXAMPLE RunAsUser Template",
+    "description": "Reference Script: Will need manual tweaking, for executing scripts in User context",
+    "shell": "powershell",
+    "category": "TRMM (Win):Misc>Reference",
+    "supported_platforms": [
+      "windows"
+    ],
+    "default_timeout": "90"
   },
   {
     "guid": "453c6d22-84b7-4767-8b5f-b825f233cf55",
@@ -1392,7 +1452,9 @@
       "-apitw {{client.TeamViewerAPI}}"
     ],
     "default_timeout": "600",
-    "supported_platforms": ["windows"],
+    "supported_platforms": [
+      "windows"
+    ],
     "shell": "powershell",
     "category": "TRMM (Win):3rd Party Software"
   }
