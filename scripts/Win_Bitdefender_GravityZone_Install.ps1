@@ -8,7 +8,7 @@
     $url is the Installation Link in the GravityZone
     $log if provided will output verbose logs with timestamps. This can be used to determine how long the installer took.
 
-    TacticalRMM: Need to add Custom Fields to the Client or Site and invoke them in the Script Arguments; example shown.
+    SCSRMM: Need to add Custom Fields to the Client or Site and invoke them in the Script Arguments; example shown.
     Name the url "bdurl" in the client custom field.
         -url {{client.bdurl}
 

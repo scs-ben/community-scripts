@@ -11,11 +11,11 @@
 
 .INSTRUCTIONS
     1. Get your API Credentials (Client Id, Client Secret) using the steps in the Requirements section
-    2. In Tactical RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields: 
+    2. In SCS RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields:
         a) SophosTenantName as type text
         b) SophosClientId as type text
         c) SophosClientSecret as type text
-    3. In Tactical RMM, Right-click on each client and select Edit.  Fill in the SophosTenantName, SophosClientId, and SophosClientSecret.  
+    3. In SCS RMM, Right-click on each client and select Edit.  Fill in the SophosTenantName, SophosClientId, and SophosClientSecret.
        Make sure the SophosTenantName is EXACTLY how it is displayed in your Sophos Partner / Central Dashboard.  A partner can find the list of tenants on the left menu under Sophos Central Customers
     4. Create the follow script arguments
         a) -ClientId {{client.SophosClientId}}

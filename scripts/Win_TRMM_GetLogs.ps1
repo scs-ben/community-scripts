@@ -1,6 +1,6 @@
 <#
       .SYNOPSIS
-        Pull Tactical RMM and Mesh Log File contents
+        Pull SCS RMM and Mesh Log File contents
       .DESCRIPTION
         Will pull last 50 lines of log. Can pull more/less lines if desired
       .PARAMETER Lines

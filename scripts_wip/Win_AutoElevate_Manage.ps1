@@ -12,13 +12,13 @@
 .EXAMPLE
     Win_AutoElevate_Manage -LicenseKey "abcdefg" -CompanyName "MyCompany" -CompanyInitials "MC" -LocationName "Main" -AgentMode live
 .INSTRUCTIONS
-    1. In Tactical RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields: 
+    1. In SCS RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields:
         a) AutoElevateLicenseKey as type text
         b) AutoElevateCompanyName as type text
         c) AutoElevateCompanyInitials as type text
         d) AutoElevateLocationName as type text
         e) AutoElevateAgentMode as type Dropdown Single with options live, policy, audit, and technician
-    2. In Tactical RMM, Right-click on each client and select Edit. Fill in the created fields.
+    2. In SCS RMM, Right-click on each client and select Edit. Fill in the created fields.
     3. Create the follow script arguments
         a) -LicenseKey {{client.AutoElevateLicenseKey}}
         b) -CompanyName {{client.AutoElevateCompanyName}}

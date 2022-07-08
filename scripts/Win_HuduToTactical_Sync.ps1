@@ -1,13 +1,13 @@
 <#
 .SYNOPSIS
-    Syncs agents from Tactical RMM to Hudu.
+    Syncs agents from SCS RMM to Hudu.
 
 .REQUIREMENTS
-    - You will need an API key from Hudu and Tactical RMM which should be passed as parameters (DO NOT hard code in script).  
+    - You will need an API key from Hudu and SCS RMM which should be passed as parameters (DO NOT hard code in script).
     - This script imports/installs powershell module https://github.com/lwhitelock/HuduAPI which you may have to manually install if errors.
 
 .NOTES
-    - Ideally, this script should be run on the Tactical RMM server however since there is no linux agent, 
+    - Ideally, this script should be run on the SCS RMM server however since there is no linux agent,
       you'll have to run this on one of your trusted Windows devices.
     - This script compares Tactical's Client Name with Hudu's Company Names and if there is a match (case sensitive) 
       it creates/syncs asset based on hostname.  Nothing will be created or synced if a company match is not found.  
@@ -17,7 +17,7 @@
     - $ApiUrlTactical   - Tactical API Url
     - $ApiKeyHudu       - Hudu API Key
     - $ApiUrlHudu       - Hudu API Url
-    - $HuduAssetName    - The name of the asset in Hudu.  Defaults to "TacticalRMM Agents"
+    - $HuduAssetName    - The name of the asset in Hudu.  Defaults to "SCSRMM Agents"
     - $CopyMode         - If set, the script will not delete the assets in Hudu before syncing (Any items deleted from Tactical will remain in Hudu until manually removed).  
 .EXAMPLE
     - Tactical_Hudu_Sync.ps1 -ApiKeyTactical 1234567 -ApiUrlTactical api.yourdomain.com -ApiKeyHudu 1248ABBCD3 -ApiUrlHudu hudu.yourdomain.com -HuduAssetName "Tactical Agents" -CopyMode
@@ -81,8 +81,8 @@ if ([string]::IsNullOrEmpty($ApiUrlHudu)) {
 }
 
 if ([string]::IsNullOrEmpty($HuduAssetName)) {
-    Write-Output "HuduAssetName param not defined.  Using default name TacticalRMM Agents."
-    $HuduAssetName = "TacticalRMM Agents"
+    Write-Output "HuduAssetName param not defined.  Using default name SCSRMM Agents."
+    $HuduAssetName = "SCSRMM Agents"
 }
 
 try {
@@ -256,7 +256,7 @@ try {
     $agentsResult = Invoke-RestMethod -Method 'Get' -Uri "https://$ApiUrlTactical/agents" -Headers $headers -ContentType "application/json"
 }
 catch {
-    throw "Error invoking rest call on Tactical RMM with error: $($PSItem.ToString())"
+    throw "Error invoking rest call on SCS RMM with error: $($PSItem.ToString())"
 }
 
 foreach ($agents in $agentsResult) {
@@ -267,7 +267,7 @@ foreach ($agents in $agentsResult) {
         $agentDetailsResult = Invoke-RestMethod -Method 'Get' -Uri "https://$ApiUrlTactical/agents/$agentId" -Headers $headers -ContentType "application/json"
     }
     catch {
-        Write-Error "Error invoking agent detail rest call on Tactical RMM with error: $($PSItem.ToString())"
+        Write-Error "Error invoking agent detail rest call on SCS RMM with error: $($PSItem.ToString())"
     }
 
     $textDisk   = Get-ArrayData -data $agentDetailsResult.disks

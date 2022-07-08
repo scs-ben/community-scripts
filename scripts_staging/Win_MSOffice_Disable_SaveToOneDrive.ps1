@@ -16,16 +16,16 @@ else {
     Install-Module -Name RunAsUser -Force
 }
 
-If (!(test-path "$env:programdata\Tactical RMM\temp\")) {
-    New-Item -ItemType Directory -Force -Path "$env:programdata\Tactical RMM\temp\"
+If (!(test-path "$env:programdata\SCS RMM\temp\")) {
+    New-Item -ItemType Directory -Force -Path "$env:programdata\SCS RMM\temp\"
 }
 
-If (!(test-path "$env:programdata\Tactical RMM\temp\curpsxpolicy.txt")) {
+If (!(test-path "$env:programdata\SCS RMM\temp\curpsxpolicy.txt")) {
     $curexpolicy = Get-ExecutionPolicy
 
     (
         Write-Output $curexpolicy
-    )>"$env:programdata\Tactical RMM\temp\curpsxpolicy.txt"
+    )>"$env:programdata\SCS RMM\temp\curpsxpolicy.txt"
 }
 Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell -Name ExecutionPolicy -Value Unrestricted
 
@@ -39,6 +39,6 @@ Invoke-AsCurrentUser -scriptblock {
     New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Office\$Version\Common\Internet -Name OnlineStorage -Value 3  -PropertyType DWORD
 }
 
-$curpsxpol = Get-Content -Path "$env:programdata\Tactical RMM\temp\curpsxpolicy.txt";
+$curpsxpol = Get-Content -Path "$env:programdata\SCS RMM\temp\curpsxpolicy.txt";
     
 Set-ExecutionPolicy -ExecutionPolicy $curpsxpol

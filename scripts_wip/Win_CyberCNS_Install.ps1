@@ -14,13 +14,13 @@
     Win_CyberCNS_Install -Type Scan
 .INSTRUCTIONS
     1. Navigate to your CyberCNS portal and create a Probe/Agent deployment.
-    2. In Tactical RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields: 
+    2. In SCS RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields:
         a) CyberCNSTenant as type text
         b) CyberCNSCompanyID as type text
         c) CyberCNSClientID as type text
         d) CyberCNSClientSecret as type text
         e) CyberCNSType as type Dropdown Multiple with options Probe, LightWeight, and Scan
-    3. In Tactical RMM, Right-click on each client and select Edit. Fill in the CyberCNSTenant, CyberCNSCompanyID, CyberCNSClientID, 
+    3. In SCS RMM, Right-click on each client and select Edit. Fill in the CyberCNSTenant, CyberCNSCompanyID, CyberCNSClientID,
         and CyberCNSClientSecret.
     4. Create the follow script arguments
         a) -Tenant {{client.CyberCNSTenant}}

@@ -24,7 +24,7 @@
 param(
     $username, 
     $password, 
-    $description = "User added by TacticalRMM", 
+    $description = "User added by SCSRMM",
     $fullname = "",
     $group
 )

@@ -12,11 +12,11 @@
     Win_DuoAuthLogon_Manage -IntegrationKey "ikey" -SecretKey "skey" -ApiHost "apihost-hostname" -AutoPush 1 -FailOpen 0 -RdpOnly 0
 .INSTRUCTIONS
     1. Create a Microsoft RDP application in Duo. Copy the values provided in the details.
-    2. In Tactical RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields: 
+    2. In SCS RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields:
         a) DuoIntegrationKey as type text
         b) DuoSecretKey as type text
         c) DuoApiHost as type text
-    3. In Tactical RMM, Right-click on each client and select Edit. Fill in the DuoIntegrationKey, DuoSecretKey, and DuoApiHost.
+    3. In SCS RMM, Right-click on each client and select Edit. Fill in the DuoIntegrationKey, DuoSecretKey, and DuoApiHost.
     4. Create the follow script arguments
         a) -IntegrationKey {{client.DuoIntegrationKey}}
         b) -SecretKey {{client.DuoSecretKey}}

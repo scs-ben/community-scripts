@@ -26,16 +26,16 @@ else {
     Install-Module -Name RunAsUser -Force
 }
 
-If (!(test-path $env:programdata\TacticalRMM\temp\)) {
-    New-Item -ItemType Directory -Force -Path $env:programdata\TacticalRMM\temp\
+If (!(test-path $env:programdata\SCSRMM\temp\)) {
+    New-Item -ItemType Directory -Force -Path $env:programdata\SCSRMM\temp\
 }
 
-If (!(test-path $env:programdata\TacticalRMM\temp\curpsxpolicy.txt)) {
+If (!(test-path $env:programdata\SCSRMM\temp\curpsxpolicy.txt)) {
     $curexpolicy = Get-ExecutionPolicy
 
     (
         Write-Output $curexpolicy
-    )>$env:programdata\TacticalRMM\temp\curpsxpolicy.txt
+    )>$env:programdata\SCSRMM\temp\curpsxpolicy.txt
 }
 Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell -Name ExecutionPolicy -Value Unrestricted
 
@@ -50,6 +50,6 @@ Invoke-AsCurrentUser -scriptblock {
 
 Write-Output "Successfully changed Sent Items for Delegated folders"
 
-$curpsxpol = Get-Content -Path $env:programdata\TacticalRMM\temp\curpsxpolicy.txt;
+$curpsxpol = Get-Content -Path $env:programdata\SCSRMM\temp\curpsxpolicy.txt;
     
 Set-ExecutionPolicy -ExecutionPolicy $curpsxpol

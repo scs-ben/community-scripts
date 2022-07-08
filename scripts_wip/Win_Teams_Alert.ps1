@@ -36,7 +36,7 @@ if($severity -eq "info"){
   $colour = 'ffff00'
 }
 
-$msteams_payload = '{"@context": "https://schema.org/extensions", "@type": "MessageCard", "summary": "TacticalRMM Alert", "themeColor": "' + $colour +'", '
+$msteams_payload = '{"@context": "https://schema.org/extensions", "@type": "MessageCard", "summary": "SCSRMM Alert", "themeColor": "' + $colour +'", '
 $msteams_payload = $msteams_payload + '"text": "'
 
 if($time) {

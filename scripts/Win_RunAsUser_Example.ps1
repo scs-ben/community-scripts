@@ -19,10 +19,10 @@ else {
     Install-Module -Name RunAsUser -Force
 }
 
-# Make sure Tactical RMM temp script folder exists
-If (!(test-path "c:\ProgramData\TacticalRMM\temp\")) {
-    Write-Output "Creating c:\ProgramData\TacticalRMM\temp Folder"
-    New-Item "c:\ProgramData\TacticalRMM\temp" -itemType Directory
+# Make sure SCS RMM temp script folder exists
+If (!(test-path "c:\ProgramData\SCSRMM\temp\")) {
+    Write-Output "Creating c:\ProgramData\SCSRMM\temp Folder"
+    New-Item "c:\ProgramData\SCSRMM\temp" -itemType Directory
 }
 
 Write-Output "Hello from Systemland"
@@ -30,33 +30,33 @@ Write-Output "Hello from Systemland"
 Invoke-AsCurrentUser -scriptblock {
 
     # Put all Userland code here
-    Write-Output "Hello from Userland" | Out-File -append -FilePath c:\ProgramData\TacticalRMM\temp\raulog.txt
+    Write-Output "Hello from Userland" | Out-File -append -FilePath c:\ProgramData\SCSRMM\temp\raulog.txt
     If (test-path "c:\temp\") {
-        Write-Output "Test for c:\temp\ folder passed which is Exit 0" | Out-File -append -FilePath c:\ProgramData\TacticalRMM\temp\raulog.txt
+        Write-Output "Test for c:\temp\ folder passed which is Exit 0" | Out-File -append -FilePath c:\ProgramData\SCSRMM\temp\raulog.txt
     }
     else {
-        Write-Output "Test for c:\temp\ folder failed which is Exit 1" | Out-File -append -FilePath c:\ProgramData\TacticalRMM\temp\raulog.txt
+        Write-Output "Test for c:\temp\ folder failed which is Exit 1" | Out-File -append -FilePath c:\ProgramData\SCSRMM\temp\raulog.txt
         # Writing exit1.txt for Userland Exit 1 passing to Systemland for returning to Tactical
-        Write-Output "Exit 1" | Out-File -append -FilePath c:\ProgramData\TacticalRMM\temp\exit1.txt
+        Write-Output "Exit 1" | Out-File -append -FilePath c:\ProgramData\SCSRMM\temp\exit1.txt
     }
     # End of all Userland code
 
 }
 
 # Get userland return info for Tactical Script History
-$exitdata = Get-Content -Path "c:\ProgramData\TacticalRMM\temp\raulog.txt"
+$exitdata = Get-Content -Path "c:\ProgramData\SCSRMM\temp\raulog.txt"
 Write-Output $exitdata
 # Cleanup raulog.txt File
-Remove-Item -path "c:\ProgramData\TacticalRMM\temp\raulog.txt"
+Remove-Item -path "c:\ProgramData\SCSRMM\temp\raulog.txt"
 
 # Checking for Userland Exit 1
-If (!(Test-Path -Path "c:\ProgramData\TacticalRMM\temp\exit1.txt" -PathType Leaf)) {
+If (!(Test-Path -Path "c:\ProgramData\SCSRMM\temp\exit1.txt" -PathType Leaf)) {
     # No Exit 1 From Userland
     Exit 0
 }
 Else {
     Write-Output 'Return Exit 1 to Tactical from Userland'
-    Remove-Item -path "c:\ProgramData\TacticalRMM\temp\exit1.txt"
+    Remove-Item -path "c:\ProgramData\SCSRMM\temp\exit1.txt"
     Exit 1
 }
 

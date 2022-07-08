@@ -1,6 +1,6 @@
 # From Chase 12/14/2021
 
-function Create-TacticalRMMClient {
+function Create-SCSRMMClient {
     
     param(
         $APIKey,

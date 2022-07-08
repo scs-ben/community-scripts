@@ -19,9 +19,9 @@ if ($Model.toupper().contains('VIRTUAL') -Or ($Model.toupper().contains('PROLIAN
 	$rmmURI = 'https://INSTALL_SCRIPT_LOCATION/rmm_server.ps1'
 }
 
-$ChkReg = Test-Path 'HKLM:\SOFTWARE\TacticalRMM\'
+$ChkReg = Test-Path 'HKLM:\SOFTWARE\SCSRMM\'
 If ($ChkReg -eq $True) {
-	$regrmm = Get-ItemProperty -Path HKLM:\SOFTWARE\TacticalRMM\
+	$regrmm = Get-ItemProperty -Path HKLM:\SOFTWARE\SCSRMM\
 }
 else {
 	write-host "Installing, no registry entry"
@@ -64,7 +64,7 @@ Foreach ($rmmagent in $rmmagents) {
 if ($install -eq $NULL) {
 
 	If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
-		write-host ('Tactical RMM Is Already Installed')
+		write-host ('SCS RMM Is Already Installed')
 		& 'C:\Program Files\TacticalAgent\unins000.exe' /VERYSILENT
 		Start-Sleep -s 20	
 	}

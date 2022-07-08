@@ -20,7 +20,7 @@ If (!(test-path "$env:programdata\TRMMScripts\screenshots\")) {
     New-Item -ItemType Directory -Force -Path "$env:programdata\TRMMScripts\screenshots\"
 }
 
-If (!(test-path "$env:programdata\Tactical RMM\temp\curpsxpolicy.txt")) {
+If (!(test-path "$env:programdata\SCS RMM\temp\curpsxpolicy.txt")) {
     $curexpolicy = Get-ExecutionPolicy
 
     (

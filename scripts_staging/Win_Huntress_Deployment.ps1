@@ -28,7 +28,7 @@
 # specified name). The Account Key links the agent to the Huntress account and
 # the Organization Key affiliates the agent to a specific client/company. The
 # Syncro integration will automatically pass the Account Key and Organization
-# Key (the customer Business Name within Tactical RMM).
+# Key (the customer Business Name within SCS RMM).
 
 # See https://support.huntress.io/article/7-using-account-and-organization-keys
 # for more details.
@@ -56,7 +56,7 @@ Set-StrictMode -Version Latest
 # Do not modify the following variables.
 # These are used by the Huntress support team when troubleshooting.
 $ScriptVersion = "2020 April 3; revision 1"
-$ScriptType = "Tactical RMM"
+$ScriptType = "SCS RMM"
 
 # Variables used throughout the Huntress Deployment Script.
 $X64 = 64

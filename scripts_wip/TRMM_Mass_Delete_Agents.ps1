@@ -2,9 +2,9 @@
 .SYNOPSIS
     Delete agents by client and site name
 .REQUIREMENTS
-    - You will need an API key from Tactical RMM which should be passed as parameters (DO NOT hard code in script).  Do not run this on each agent (see notes).  
+    - You will need an API key from SCS RMM which should be passed as parameters (DO NOT hard code in script).  Do not run this on each agent (see notes).
 .NOTES
-    - This script is designed to run on a single computer.  Ideally, it should be run on the Tactical RMM server or other trusted device.
+    - This script is designed to run on a single computer.  Ideally, it should be run on the SCS RMM server or other trusted device.
     - This script loops through each agent uninstalling the agent and deleting each from the backend.
 .PARAMETERS
     - $ApiKeyTactical   - Tactical API Key
@@ -46,7 +46,7 @@ try {
     $agentsResult = Invoke-RestMethod -Method 'Get' -Uri "https://$ApiUrlTactical/agents" -Headers $headers -ContentType "application/json"
 }
 catch {
-    throw "Error invoking rest call on Tactical RMM with error: $($PSItem.ToString())"
+    throw "Error invoking rest call on SCS RMM with error: $($PSItem.ToString())"
 }
 
 $agentsDeleted = 0

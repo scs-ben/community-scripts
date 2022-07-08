@@ -3,11 +3,11 @@
     Toggle the approval and installation of a specific KB accross all agents using the API and without installing any 3rd party libraries.
 
 .REQUIREMENTS
-    - You will need an API key from Tactical RMM which should be passed as parameters (DO NOT hard code in script).  Do not run this on each agent (see notes).  
+    - You will need an API key from SCS RMM which should be passed as parameters (DO NOT hard code in script).  Do not run this on each agent (see notes).
 
 .NOTES
-    - This script is designed to run on a single computer.  Ideally, it should be run on the Tactical RMM server or other trusted device.
-    - This script cycles through each agent toggling the approval and installation of a specific kb.  Tactical RMM will do the installation when it's ready.
+    - This script is designed to run on a single computer.  Ideally, it should be run on the SCS RMM server or other trusted device.
+    - This script cycles through each agent toggling the approval and installation of a specific kb.  SCS RMM will do the installation when it's ready.
 
 .PARAMETERS
     - $ApiKeyTactical   - Tactical API Key
@@ -49,7 +49,7 @@ try {
     $agentsResult = Invoke-RestMethod -Method 'Get' -Uri "https://$ApiUrlTactical/agents" -Headers $headers -ContentType "application/json"
 }
 catch {
-    throw "Error invoking get all agents on Tactical RMM with error: $($PSItem.ToString())"
+    throw "Error invoking get all agents on SCS RMM with error: $($PSItem.ToString())"
 }
 
 foreach ($agents in $agentsResult) {

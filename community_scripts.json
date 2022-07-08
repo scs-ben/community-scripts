@@ -184,51 +184,51 @@
     "guid": "9d34f482-1f0c-4b2f-b65f-a9cf3c13ef5f",
     "filename": "Win_TRMM_Rename_Installed_App.ps1",
     "submittedBy": "https://github.com/bradhawkins85",
-    "name": "TacticalRMM - Agent Rename",
-    "description": "Updates the DisplayName registry entry for the Tactical RMM windows agent to your desired name. This script takes 1 required argument: the name you wish to set.",
+    "name": "SCSRMM - Agent Rename",
+    "description": "Updates the DisplayName registry entry for the SCS RMM windows agent to your desired name. This script takes 1 required argument: the name you wish to set.",
     "syntax": "<string>",
     "shell": "powershell",
     "supported_platforms": [
       "windows"
     ],
-    "category": "TRMM (Win):TacticalRMM Related"
+    "category": "TRMM (Win):SCSRMM Related"
   },
   {
     "guid": "01845406-d83d-4ba5-960e-06bafe67a235",
     "filename": "Win_TRMM_GetLogs.ps1",
     "submittedBy": "https://github.com/RemiOS0456",
-    "name": "TacticalRMM - Get Agent Logs",
+    "name": "SCSRMM - Get Agent Logs",
     "description": "Pulls last 50 lines, unless more are requested from TRMM agent and Mesh Agent",
     "syntax": "[-Lines <Int>]",
     "shell": "powershell",
     "supported_platforms": [
       "windows"
     ],
-    "category": "TRMM (Win):TacticalRMM Related"
+    "category": "TRMM (Win):SCSRMM Related"
   },
   {
     "guid": "e2a21b69-b446-429c-ab56-328d4e8696fb",
     "filename": "Win_TRMM_Agent_Debugmode.bat",
     "submittedBy": "https://github.com/silversword411",
-    "name": "TacticalRMM - Put TRMM Agent into Debug Mode",
+    "name": "SCSRMM - Put TRMM Agent into Debug Mode",
     "description": "Puts TRMM agent into debug mode temporarily. Restart PC to end debug session. Pull logs with Get Agent Logs script.",
     "shell": "cmd",
     "supported_platforms": [
       "windows"
     ],
-    "category": "TRMM (Win):TacticalRMM Related"
+    "category": "TRMM (Win):SCSRMM Related"
   },
   {
     "guid": "910e4ac3-5c6d-47a2-ab99-0d8bb2ddf166",
     "filename": "Win_TRMM_Agent_DebugmodeUndo.bat",
     "submittedBy": "https://github.com/silversword411",
-    "name": "TacticalRMM - Undo TRMM Agent Debug Mode",
+    "name": "SCSRMM - Undo TRMM Agent Debug Mode",
     "description": "Reverts TRMM agent debug mode back to normal mode. Pull logs with Get Agent Logs script.",
     "shell": "cmd",
     "supported_platforms": [
       "windows"
     ],
-    "category": "TRMM (Win):TacticalRMM Related"
+    "category": "TRMM (Win):SCSRMM Related"
   },
   {
     "guid": "525ae965-1dcf-4c17-92b3-5da3cf6819f5",
@@ -790,7 +790,7 @@
     "filename": "Win_TRMM_AV_Update_Exclusion.ps1",
     "submittedBy": "https://github.com/dinger1986",
     "name": "TRMM Defender Exclusions",
-    "description": "Windows Defender Exclusions for Tactical RMM",
+    "description": "Windows Defender Exclusions for SCS RMM",
     "shell": "powershell",
     "supported_platforms": [
       "windows"
@@ -1144,10 +1144,10 @@
     "guid": "83f6c6ea-6120-4fd3-bec8-d3abc505dcdf",
     "filename": "Win_TRMM_Start_Menu_Delete_Shortcut.ps1",
     "submittedBy": "https://github.com/silversword411",
-    "name": "TacticalRMM - Delete Start Menu Shortcut for App",
+    "name": "SCSRMM - Delete Start Menu Shortcut for App",
     "description": "Delete its application shortcut that's installed in the start menu by default",
     "shell": "powershell",
-    "category": "TRMM (Win):TacticalRMM Related",
+    "category": "TRMM (Win):SCSRMM Related",
     "supported_platforms": [
       "windows"
     ],

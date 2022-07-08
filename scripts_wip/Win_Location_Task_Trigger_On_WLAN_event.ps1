@@ -5,5 +5,5 @@ $CIMTriggerClass = Get-CimClass -ClassName MSFT_TaskEventTrigger -Namespace Root
 $Trigger = New-CimInstance -CimClass $CIMTriggerClass -ClientOnly
 $Trigger.Subscription = "<QueryList><Query Id='0' Path='Microsoft-Windows-WLAN-AutoConfig/Operational'><Select Path='Microsoft-Windows-WLAN-AutoConfig/Operational'>*[System[Provider[@Name='Microsoft-Windows-WLAN-AutoConfig'] and EventID=11001]]</Select></Query></QueryList>"
 $Trigger.Enabled = $True 
-$Taskname = 'TacticalRMM_TASKID'
+$Taskname = 'SCSRMM_TASKID'
 Set-ScheduledTask -TaskName $Taskname -Trigger $Trigger

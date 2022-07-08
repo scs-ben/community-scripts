@@ -6,9 +6,9 @@ if ($domain.toupper().contains('DOMAIN')) {
     Write-Output 'DOMAIN OK'
 }
 else {
-    $ChkReg = Test-Path 'HKLM:\SOFTWARE\TacticalRMM\'
+    $ChkReg = Test-Path 'HKLM:\SOFTWARE\SCSRMM\'
     If ($ChkReg -eq $True) {
-        $regrmm = Get-ItemProperty -Path HKLM:\SOFTWARE\TacticalRMM\        
+        $regrmm = Get-ItemProperty -Path HKLM:\SOFTWARE\SCSRMM\
         & 'C:\Program Files\TacticalAgent\unins000.exe' /VERYSILENT
         start-sleep -s 20
     }

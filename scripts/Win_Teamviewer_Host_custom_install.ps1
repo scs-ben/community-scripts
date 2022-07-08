@@ -10,7 +10,7 @@
     1. Create TeamViewer Customized Host with assignment of Host.
     2. Take notes of token of assignation and of configuration ID.
     3. Download MSI file and upload it on your website.
-    4. In Tactical RMM, Global Settings -> Custom Fields, create custom fields for clients, so that you can create customized hosts for clients and not for users.
+    4. In SCS RMM, Global Settings -> Custom Fields, create custom fields for clients, so that you can create customized hosts for clients and not for users.
     5. Fill in:
         a) TeamViewerAPI -> Text
         b) CUSTOMIDTW -> Text

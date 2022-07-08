@@ -10,11 +10,11 @@
 .EXAMPLE
     Win_LocalAdmin_Manage -LocalAdminUser CompanyAdmin -LocalPassword Password123 -Enforce
 .INSTRUCTIONS
-    1. In Tactical RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, 
+    1. In SCS RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients,
     create the following custom fields:
         a) LocalAdminUser as type text
         b) LocalAdminPassword as type text
-    3. In Tactical RMM, Right-click on each client and select Edit. Fill in the LocalAdminPassword.
+    3. In SCS RMM, Right-click on each client and select Edit. Fill in the LocalAdminPassword.
     4. Create the following script arguments
         a) -LocalAdminUser {{client.LocalAdminUser}}
         b) -LocalAdminPassword {{client.LocalAdminPassword}}

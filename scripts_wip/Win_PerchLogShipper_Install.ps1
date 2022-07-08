@@ -7,9 +7,9 @@
 .EXAMPLE
     Win_PerchLogShipper_Install -Token "abc-123-def-456"
 .INSTRUCTIONS
-    1. In Tactical RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields: 
+    1. In SCS RMM, Go to Settings >> Global Settings >> Custom Fields and under Clients, create the following custom fields:
         a) PerchToken as type text
-    2. In Tactical RMM, Right-click on each client and select Edit. Fill in the PerchToken.
+    2. In SCS RMM, Right-click on each client and select Edit. Fill in the PerchToken.
     3. Create the follow script arguments
         a) -Token {{client.PerchToken}}
 .NOTES
